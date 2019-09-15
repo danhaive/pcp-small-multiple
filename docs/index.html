@@ -1,0 +1,291 @@
+<!DOCTYPE HTML>
+<html xml:lang="en" lang="en">
+
+<head>
+  <title>6.894 Assignment 3 - Danhaive</title>
+
+  <!-- PureCSS Responsive Grid -->
+  <!--[if lte IE 8]>
+      <link rel="stylesheet" href="//cdn.jsdelivr.net/g/pure@0.6.0(grids-min.css+grids-responsive-old-ie-min.css)" />
+    <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/g/pure@0.6.0(base-min.css+grids-min.css+grids-responsive-min.css)" />
+  <!--<![endif]-->
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:500,700|Alegreya+Sans:300,300i,400,400i,500,500i,700,700i"
+    rel="stylesheet">
+  <link rel="stylesheet" href="http://vis.mit.edu/styles.css" type="text/css">
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+
+    a {
+      color: #A31F34;
+      font-weight: 400;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #f4b014;
+    }
+
+    img,
+    a.img,
+    a:hover.img {
+      border: none;
+    }
+
+    img {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      width: 100%;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      background-color: inherit;
+      font-weight: normal;
+      padding: 0 0 5px 0;
+      margin: 15px 0 0 0;
+      border: none;
+      clear: right;
+      color: #000;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin: 5px 0 10px 0;
+      line-height: 28px;
+      font-weight: bold;
+    }
+
+    h2 {
+      font-size: 14pt;
+      margin: 30px 0 15px 0;
+      letter-spacing: 0.01em;
+      line-height: 20px;
+    }
+
+    h3 {
+      font-size: 13pt;
+      font-weight: bold;
+    }
+
+    h4 {
+      font-size: 12pt;
+      padding: 0 0 5px 0;
+      margin: 5px 0 0 0;
+    }
+
+    h5 {
+      font-size: 11pt;
+    }
+
+    p {
+      margin: 0 0 5px 0;
+    }
+
+    hr {
+      border: 0px;
+      border-top: 1px solid #ccc;
+      height: 0px;
+    }
+
+    ol {
+      margin: 1em;
+    }
+
+    .content {
+      /*margin: 0;*/
+      padding: 15px 20px;
+      background-color: #ffffff;
+      border: 0;
+      margin: 0 auto 0 auto;
+      padding: 0;
+      width: 950px;
+      font-size: 0.95em;
+    }
+
+    .article {
+      line-height: 1.5em;
+    }
+
+    .entry {
+      padding-top: 2px;
+      margin-top: 3em;
+    }
+  </style>
+</head>
+
+<body class="pure-g">
+  <div id="ribbon" class="pure-u-1">
+    <div class="red"></div>
+    <div class="grey"></div>
+  </div>
+  <div class='content pure-u-1'>
+
+    <section>
+      <h1>Assignment 3</h1>
+
+      <p>
+        <strong>Renaud Danhaive</strong> &mdash;
+        <em>danhaive@mit.edu</em>
+      </p>
+    </section>
+    <section>
+      <h2>Design Space Lab <a href="demo.html">Prototype</a></h2>
+      <p>
+        For my final project, I intend to build a interactive visualization tool to help architects, engineers, and
+        product designers
+        explore design spaces in a performance-driven way.
+        A design space is defined by design variables/parameters, which control the design geometry. For a given set of
+        design variables, the resulting geometry of
+        the design can be evaluated based on the function that the design needs to fulfill.
+        For example, if we define a design space for a roof truss, we would like it to be as lightweight as possible to
+        reduce cost and material consumption. In this case, weight is our performance metric, and it is affected by the
+        geometry of the truss, itself
+        controlled by design variables. Exploring the relationship between the design variables, the objective, and the
+        design geometry is key to
+        converging to a good design option.
+        This exploration can be done manually, but it is usually too tedious to be effective. Another option is to use
+        optimization, which may or may not
+        return the optimal answer (given objective functions used in design are rarely convex), but optimization will
+        typically not be able to take into
+        account unquantifiable criteria of importance, say aesthetic appeal, which require a human designer to be
+        assessed.
+        An alternative is thus to sample the design space and visualize it. The trick here is to not only visualize the
+        relationship between design variables and
+        objectives but also to visualize the design geometry itself.
+        By using parallel coordinate and trellis plots, the prototype I built for assignment 3 offers a first strategy
+        to do so.
+      </p>
+      <h3>Dataset</h3>
+      <p>
+        The prototype is intended to be broadly applicable to different design problems. For the purpose of this demo,
+        I built a design space that generates roof trusses based on 5 input variables. Using that design space, I
+        automatically
+        sampled 500 trusses, which were evaluated for weight. In addition, I took a screenshot of the front and side
+        views of each truss geometry.
+        To summarize, we have 500 datapoints of the form <i>[x<sub>1</sub>, x<sub>2</sub>, x<sub>3</sub>, x<sub>4</sub>,
+          x<sub>5</sub>, w]</i>
+        with an associated image <i>glyph-#.png</i>.
+      </p>
+
+      <h3>Interface</h3>
+      <p>
+        The interface of the prototype is not necessarily meant to be understood at first glance, as it required a
+        fairly involved set of charts to offer
+        a full(ish) picture of the dataset, which is what I was after. To help you navigate the demo, the diagrams below
+        show the interface and some of the key features of the prototype.
+      </p>
+      <img src="diagrams\interface_diagram-1.jpg" />
+      <img src="diagrams\interface_diagram-2.jpg" />
+      <img src="diagrams\interface_diagram-3.jpg" />
+
+      <h3>Design choices</h3>
+
+
+      <ul>
+        <p>
+          <h4>Choice of color encoding</h4>
+          To maintain an instantaneous visual assessment of the performance of a specific design, I opted to use color
+          to encode performance. I also tried to
+          work with size, but it simply was not legible as the paths in the parallel coordinate plot are highly
+          entangled.
+        </p>
+        <p>
+          <h4>Curved paths</h4>
+          Instead of using polylines for each desing in the parallel plot, I chose to use curved paths because the
+          associated smoothness
+          makes it easier to track a specific path.
+        </p>
+        <p>
+          <h4>Information scent with kernel density estimation</h4>
+          The additional density information helps in quickly assessing the density of paths when there is overlap. It
+          also makes the parallel coordinate plot
+          less boring.
+        </p>
+        <p>
+          <h4>Alignment of axes</h4>
+          The dimensions in the parallel coordinate plot and the rows of the scatter plot matrix share the same axes,
+          clarifying the overall layout of
+          the visualization.
+        </p>
+        <p>
+          <h4>Alignment of axes</h4>
+          The dimensions in the parallel coordinate plot and the rows of the scatter plot matrix share the same axes,
+          clarifying the overall layout of
+          the visualization.
+        </p>
+        <p>
+          <h4>Design glyph on hover</h4>
+          When hovering over a datapoint, the user will see an image of the design, which is critical to assess a desing
+          beyond its numerical score.
+        </p>
+        <p>
+          <h4>Automatic rescaling option</h4>
+          I knew it would be important to provide a way to zoom in on specific regions of the design space. I decided to
+          make all the filtering happen
+          in the parallel coordinate plot for simplicity and clarity. While I am still considering allowing to zoom in
+          the scatter plots in a future iteration,
+          I believe the parallel plot is a nice way to control each variable independtly, similarly to sliders.
+          Sometimes, however, a user may want to have a global view of the space and can disable to option to do so.
+        </p>
+      </ul>
+
+      </p>
+      <h3>Design Development</h3>
+      <p>
+        Since I worked on my own, I did not necessarily track time while working, but it definitely took a few days,
+        mostly because I had never used d3 before, and
+        it can be counter-intuitive at times. I improved my initial design progressively as I developed the
+        prototype, but I spent a lot of time working on the interactions, and I certaibly did not explore as many design
+        alternatives as I had wished.
+      </p>
+      <h3>Improvements</h3>
+      <ul>
+        <p>
+          <h4>Performance</h4>
+          The prototype suffers from slight performance issues when filtering many paths at once. In the future, I plan
+          on making some of the functions called
+          upon brushing asynchronous.
+        </p>
+        <p>
+          <h4>Complexity</h4>
+          Overall, the visualization may be a bit overdesigned. It is fairly complex and may be hard to comprehend. In
+          addition, I observed, at least in the present
+          dataset, some of the plots in the scatter plot matrix are not super useful.
+        </p>
+        <p>
+          <h4>Difficulty in hovering</h4>
+          Hovering over a particular datapoint is not particularly easy, and perhaps I should scale up the circles upon
+          zoom.
+        </p>
+        <p>
+          <h4>Scalability</h4>
+          The prototype works because this design space only included 5 input variables. I probably have to rethink the
+          visualization to make it scalable
+          to 10+ variables.
+        </p>
+        <p>
+          <h4>Desing Comparison</h4>
+          As I was playing with the prototype, I realized that the design visualization feature is underutilized. Specifically, I believe designers would 
+          prefer to compare multiple designs at once.
+        </p>
+      </ul>
+
+    </section>
+
+
+  </div>
+</body>
+
+</html>

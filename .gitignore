@@ -1,0 +1,5 @@
+graphics
+*.json
+node_modules
+*.ai
+server.js

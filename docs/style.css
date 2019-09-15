@@ -1,0 +1,108 @@
+.custom-control
+{
+    position: absolute;
+    margin: 10px 0px 10px 0px;
+    left: 1150px;
+    /* right: 0; */
+}
+
+
+svg {
+    font: 10px sans-serif;
+  }
+  
+  .background path {
+    fill: none;
+    stroke: #ddd;
+    opacity:0.2;
+    shape-rendering: crispEdges;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+  }
+
+  .density path {
+    fill: rgb(70, 70, 70);
+    fill-opacity: 0.3;
+    /* stroke: #ddd; */
+    /*opacity:0.5.;
+    /*shape-rendering: crispEdges;
+    /* stroke-width: 1.5; */
+  }
+
+  .axis path {
+    display: none;
+    stroke: #aaa;
+  }
+
+  .parallel path {
+    stroke:  rgb(70, 70, 70);
+    stroke-opacity: 0.3;
+  }
+
+  .axis line{
+    stroke: #aaa;
+  }
+
+  .tick line
+  {
+      opacity: 0.2;
+  }
+
+  .frame {
+    fill: none;
+    stroke: #aaa;
+  }
+
+  circle
+  {
+    fill-opacity: 0.7
+  }
+  circle.hidden {
+    fill: #ccc !important;
+    fill-opacity: 0.2
+  }
+  
+  .foreground path {
+    fill: none;
+    opacity: 0.8;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+  }
+  
+  .brush .extent {
+    fill-opacity: .3;
+    stroke: #fff;
+    shape-rendering: crispEdges;
+    border
+  }
+  
+  .selection
+  {
+    y: -20px;
+    height: 20px;
+    border-radius: 10px;    
+  }
+  
+  /* .axis line,
+  .axis path {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  } */
+  
+  .axis text {
+    text-shadow: 0px 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+  }
+
+  div.tooltip {	
+    position: absolute;				
+    pointer-events: none;	
+    	
+}
+
+div.tooltip img {	
+    width: 300px;
+    border-radius: 20px;	
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);			
+}
+  
