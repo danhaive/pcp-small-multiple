@@ -39,7 +39,7 @@ let svg = d3.select("body").append("svg")
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 const imgPartialURL = "https://github.mit.edu/6894-sp19/Design-space-exploration-with-small-multiples/blob/master/docs/images/";
-const csvURL = "https://github.mit.edu/raw/6894-sp19/Design-space-exploration-with-small-multiples/master/docs/data.csv?token=AAAH6krGBX8rgca1-wdLLDQrT06hRwa2ks5cmEilwA%3D%3D"
+const csvURL = "https://raw.githubusercontent.com/danhaive/pcp-small-multiple/master/docs/data.csv"
 // Initialization of visualization of variables
 const data = d3.csv(csvURL, d3.autoType).then(function (designs) {
     // Extract the list of dimensions and create a scale for each.
